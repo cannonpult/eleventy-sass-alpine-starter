@@ -1,0 +1,16 @@
+button {
+  cursor: pointer;
+
+  &#mobile-only-menu-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    transition: 0.5s;
+
+    @include xs {
+      display: none;
+    }
+  }
+}

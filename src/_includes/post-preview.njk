@@ -1,0 +1,6 @@
+<article class="post-archive">
+  <time datetime="{{ post.date | dateIso }}">{{ post.date | dateReadable }}</time> 
+  <h1 class="title-article-archive">
+    <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+  </h1>       
+</article>

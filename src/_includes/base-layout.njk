@@ -1,0 +1,29 @@
+{% include "header.njk" %}
+<main 
+x-cloak 
+x-data="{ isMobile: false }"
+x-on:load.window="isMobile = (window.innerWidth < 635) ? true : false"
+x-on:resize.window="isMobile = (window.innerWidth < 635) ? true : false">
+
+  <button 
+  @click="isMobile = !isMobile" 
+  id="mobile-only-menu-toggle"
+  :class="isMobile ? 'btn-open' : ''" 
+  type="button">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -7 24 24" width="40" fill="currentColor"><path d="M1 0h5a1 1 0 1 1 0 2H1a1 1 0 1 1 0-2zm7 8h5a1 1 0 0 1 0 2H8a1 1 0 1 1 0-2zM1 4h12a1 1 0 0 1 0 2H1a1 1 0 1 1 0-2z"></path></svg>
+  </button>
+  
+  <div
+  id="sidebar"
+  x-show="!isMobile">
+    {% include "sidebar.njk" %}
+  </div>
+
+  <div
+  id="posts"
+  x-show="(window.innerWidth < 635) ? isMobile : !isMobile">      
+    {{ content | safe }}
+  </div>    
+  
+</main>
+{% include "footer.njk" %}

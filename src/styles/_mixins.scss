@@ -1,0 +1,133 @@
+/*
+|------------------------
+|
+|   Mixins
+|
+|------------------------
+*/
+
+@mixin vertical-align($position: absolute) {
+  position: $position;
+  top: 50%;
+  transform: translateY(-50%);  
+}
+
+@mixin gradient($deg: 45deg, $color1: #724097, $color2: #A33C95) {
+  background: rgba($color1,1);
+  background: -moz-linear-gradient($deg, rgba($color1,1) 0%, rgba($color2,1) 100%);
+  background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba($color1,1)), color-stop(100%, rgba($color2,1)));
+  background: -webkit-linear-gradient($deg, rgba($color1,1) 0%, rgba($color2,1) 100%);
+  background: -o-linear-gradient($deg, rgba($color1,1) 0%, rgba($color2,1) 100%);
+  background: -ms-linear-gradient($deg, rgba($color1,1) 0%, rgba($color2,1) 100%);
+  background: linear-gradient($deg, rgba($color1,1) 0%, rgba($color2,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2', GradientType=1 );  
+}
+
+@mixin overlay() {
+  content: "";
+  background-color: rgba($black,.45);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+  z-index: 0;
+  display: inline-block;
+}
+
+@mixin margin-auto() {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin global-pad() {
+  padding: 0 25px;
+
+  @include xs {
+    padding: 0 50px;
+  }
+
+  @include lg {
+    padding: 0;
+    width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include xl {
+    width: 1200px;
+  }
+/*
+  @include xxl {
+    width: 1440px;
+  }*/
+}
+
+/*
+|------------------------
+|
+|   Mixin Breakpoints
+|
+|------------------------
+*/
+
+// Mobile-First, Min-Width Media Queries
+@mixin s400 {
+   @media (min-width: 400px){
+       @content;
+   }
+}
+@mixin s480 {
+   @media (min-width: 480px){
+       @content;
+   }
+}
+
+@mixin xxs {
+   @media (min-width: 576px){
+       @content;
+   }
+}
+
+@mixin xs {
+   @media (min-width: 635px){
+       @content;
+   }
+}
+
+@mixin sm {
+   @media (min-width: 768px){
+       @content;
+   }
+}
+
+@mixin md {
+   @media (min-width: 990px){
+       @content;
+   }
+}
+
+@mixin lg {
+   @media (min-width: 1200px){
+       @content;
+   }
+}
+
+@mixin xl {
+  @media (min-width: 1440px){
+      @content;
+  }
+}
+
+@mixin xxl {
+  @media (min-width: 1600px){
+      @content;
+  }
+}
+
+// Custom width
+@mixin cm($s) {
+   @media (min-width: $s){
+       @content;
+   }  
+}

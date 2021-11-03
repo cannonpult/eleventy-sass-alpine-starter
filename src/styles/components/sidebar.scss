@@ -1,0 +1,43 @@
+#sidebar {
+
+  @include xs {
+    max-width: 230px;
+    font-family: $sans-serif, sans-serif;
+    font-weight: 200;
+    line-height: 1.5rem;
+  }
+
+  .sidebar__title {
+    font-weight: 500;
+    margin: 0 0 10px;
+  }
+
+  .sidebar__bio {
+    margin-top: 10px;
+  }
+
+  .sidebar__topics {
+    margin-top: 50px;
+
+    ul {
+      padding: 0;
+      margin-bottom: 25px;
+      max-width: 160px;
+
+      .sidebar__topic-title {
+        margin-bottom: 5px;
+      }
+
+      p {
+        font-weight: 500;
+        margin-bottom: 10px;
+      }
+
+      li {
+        list-style-type: none;
+        margin-bottom: 5px;
+        line-height: 1.35rem;
+      }
+    }
+  }
+}
