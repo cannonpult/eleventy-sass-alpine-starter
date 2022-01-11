@@ -14,7 +14,7 @@ package.json contains available terminal commands to get started.
 
 Use this as the "Publish command" if needed by hosting such as Netlify.
 
-## SCSS Directory Structure 
+## Recommended SCSS Directory Structure 
 sass/
 
 - abstracts/
