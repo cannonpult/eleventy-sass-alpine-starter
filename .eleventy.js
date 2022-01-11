@@ -9,8 +9,14 @@ moment.locale('en');
  */
 module.exports = function (eleventyConfig) {
 
-  // Use SASS
-  eleventyConfig.addWatchTarget("./src/styles");
+  // This forces the browser to reload when saving .scss,
+  // so we're not using it.
+    //eleventyConfig.addWatchTarget("./src/styles/");
+
+  // auto-injection of css styles
+  eleventyConfig.setBrowserSyncConfig({
+		files: './public/css/main.css'
+	});
 
   // Syntax Highlighting
   eleventyConfig.addPlugin(syntaxHighlight);
